@@ -114,7 +114,7 @@ class quizQuestionActivity : AppCompatActivity(), View.OnClickListener {
         }
 
         for (option in options){
-            option.setTextColor(Color.parseColor("#f54242"))// to change colours in all the options
+            option.setTextColor(Color.parseColor("#545454"))// to change colours in all the options
             option.typeface = Typeface.DEFAULT //to make typeface default again, this will chnage only when it is selected
             option.background = ContextCompat.getDrawable(
                 this,
@@ -135,7 +135,7 @@ class quizQuestionActivity : AppCompatActivity(), View.OnClickListener {
 
         Log.i("this is working","$mSelectedOptionPosition")
 
-        tv.setTextColor(Color.parseColor("#f54242")) //chnage selected option colour
+        tv.setTextColor(Color.parseColor("#2e2e2e")) //chnage selected option colour
         tv.setTypeface(tv.typeface, Typeface.BOLD)   //tv:TextView and change the seleted option to bold text
 
         tv.background = ContextCompat.getDrawable( //using the custom drawable to make the tv background
@@ -179,8 +179,6 @@ class quizQuestionActivity : AppCompatActivity(), View.OnClickListener {
             }
 
         }
-
-        TODO("Not yet implemented")
     }
 
 }
