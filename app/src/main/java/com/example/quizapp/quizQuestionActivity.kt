@@ -175,7 +175,53 @@ class quizQuestionActivity : AppCompatActivity(), View.OnClickListener {
 
             }
             R.id.btn_submit ->{
+
+                if(mSelectedOptionPosition == 0){
+                    mCurrentPosition++
+
+                    when{ //questions are left
+                        mCurrentPosition <= mQuestionList!!.size ->{
+                            setQuestion()
+                        }
+                    }
+                }
+                else{
+                    // to get which question are at. The mCurrentPosition starts with 1 thats why -1 is used
+                    val question = mQuestionList?.get(mCurrentPosition -1)
+                    //if question is wrong , quesion!! because question is assigned to nullable
+                    if(question!!.correctAnswer != mSelectedOptionPosition){
+                        answerView(mSelectedOptionPosition, R.drawable.wrong_option_border_bg)
+                    }
+                    answerView(mSelectedOptionPosition, R.drawable.correct_option_border_bg)
+                }
                 //to be implemented
+            }
+
+        }
+    }
+
+    private fun answerView(answer: Int, drawableView : Int){
+        //condition
+        when(answer){
+            1 ->{
+                tvOptionOne?.background = ContextCompat.getDrawable(
+                    this, drawableView
+                )
+            }
+            2 ->{
+                tvOptionTwo?.background = ContextCompat.getDrawable(
+                    this, drawableView
+                )
+            }
+            3 ->{
+                tvOptionThree?.background = ContextCompat.getDrawable(
+                    this, drawableView
+                )
+            }
+            4 ->{
+                tvOptionFour?.background = ContextCompat.getDrawable(
+                    this, drawableView
+                )
             }
 
         }

@@ -22,9 +22,13 @@ class MainActivity : AppCompatActivity() {
                     Toast.makeText(this,"Please enter your name",Toast.LENGTH_LONG).show()
                 }
                 else{
+                    //welcome message
+                    Toast.makeText(this,"Welcome ${etName.toString()}",Toast.LENGTH_LONG).show()
                     // to make the program to jump on the other class. Intent is from java class
                     val intent = Intent(this,quizQuestionActivity::class.java)
+
                     startActivity(intent) // this will start the intent
+
                 }
             }
 
