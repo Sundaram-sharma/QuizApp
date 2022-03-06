@@ -1,6 +1,6 @@
 package com.example.quizapp
 
-import android.content.res.ColorStateList
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
@@ -9,13 +9,14 @@ import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.core.content.ContextCompat
-import kotlin.concurrent.fixedRateTimer
 
 class quizQuestionActivity : AppCompatActivity(), View.OnClickListener {
 
     private var mCurrentPosition: Int = 1 //Position of Question
     private var mQuestionList: ArrayList<Question>? = null
     private var mSelectedOptionPosition: Int = 0 // will be used for selected option
+    private var mUserName: String? = null
+    private var mCorrectAnswer: Int = 0
 
 
 
@@ -36,6 +37,9 @@ class quizQuestionActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quiz_question)
+
+        mUserName = intent.getStringExtra(Constants.USER_NAME) //get the data from the intent using getStringExtra
+        //getStringExtra is used to retrieve the string type data
 
         //Initializing the variables
         progressBar = findViewById(R.id.progressBar)
@@ -185,7 +189,15 @@ class quizQuestionActivity : AppCompatActivity(), View.OnClickListener {
                             setQuestion()
                         }
                         else ->{ // if no questions are left
-                            Toast.makeText(this,"You made it to the end", Toast.LENGTH_LONG).show()
+                           // Toast.makeText(this,"You made it to the end", Toast.LENGTH_LONG).show()
+                            //when all questions completed, we will send the data to the next final activity
+
+                            val intent = Intent(this, ResultActivity::class.java)
+                            intent.putExtra(Constants.USER_NAME, mUserName) //takes the username
+                            intent.putExtra(Constants.CORRECT_ANSWER, mCorrectAnswer) // takes the correct answer
+                            intent.putExtra(Constants.TOTAL_QUESTION, mQuestionList?.size) // takes the total questions
+                            startActivity(intent) // to start the activity
+                            finish()
                         }
                     }
                 }
@@ -196,6 +208,9 @@ class quizQuestionActivity : AppCompatActivity(), View.OnClickListener {
                     //if question is wrong , quesion!! because question is assigned to nullable
                     if(question!!.correctAnswer != mSelectedOptionPosition){
                         answerView(mSelectedOptionPosition, R.drawable.wrong_option_border_bg)
+                    }
+                    else{
+                        mCorrectAnswer++; //this will store the correct answers
                     }
                     answerView(question.correctAnswer, R.drawable.correct_option_border_bg)
 

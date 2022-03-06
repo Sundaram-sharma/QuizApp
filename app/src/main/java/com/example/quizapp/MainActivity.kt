@@ -26,9 +26,8 @@ class MainActivity : AppCompatActivity() {
                     Toast.makeText(this,"Welcome ${etName.toString()}",Toast.LENGTH_LONG).show()
                     // to make the program to jump on the other class. Intent is from java class
                     val intent = Intent(this,quizQuestionActivity::class.java)
-
+                    intent.putExtra(Constants.USER_NAME, etName.text.toString()) //to pass additonal data to the activity
                     startActivity(intent) // this will start the intent
-
                 }
             }
 
