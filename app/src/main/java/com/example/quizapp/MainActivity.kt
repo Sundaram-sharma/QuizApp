@@ -17,13 +17,11 @@ class MainActivity : AppCompatActivity() {
         btnStart.setOnClickListener {
             btnStart.setOnClickListener {
 
-                if(etName.text.isEmpty()){
+                if(etName.text.toString().isEmpty()){
                     //show a message to the user if the name field is empty
                     Toast.makeText(this,"Please enter your name",Toast.LENGTH_LONG).show()
                 }
                 else{
-                    //welcome message
-                    Toast.makeText(this,"Welcome ${etName.toString()}",Toast.LENGTH_LONG).show()
                     // to make the program to jump on the other class. Intent is from java class
                     val intent = Intent(this,quizQuestionActivity::class.java)
                     intent.putExtra(Constants.USER_NAME, etName.text.toString()) //to pass additonal data to the activity

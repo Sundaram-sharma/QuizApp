@@ -68,7 +68,7 @@
             android:gravity="center"
             android:padding="15dp"
             android:textColor="#7A8089"
-            tools:text="Apple"/>
+            tools:text="@string/option_number01"/>
 
         <TextView
             android:id="@+id/tv_option_two"
@@ -79,7 +79,7 @@
             android:gravity="center"
             android:padding="15dp"
             android:textColor="#7A8089"
-            tools:text="Apple"/>
+            tools:text="@string/option_number02"/>
 
         <TextView
             android:id="@+id/tv_option_three"
@@ -90,7 +90,7 @@
             android:gravity="center"
             android:padding="15dp"
             android:textColor="#7A8089"
-            tools:text="Apple"/>
+            tools:text="@string/option_number03"/>
 
         <TextView
             android:id="@+id/tv_option_four"
@@ -101,7 +101,7 @@
             android:gravity="center"
             android:padding="15dp"
             android:textColor="#7A8089"
-            tools:text="Apple"/>
+            tools:text="@string/option_number04"/>
 
         <Button
             android:id="@+id/btn_submit"
