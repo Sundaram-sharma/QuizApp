@@ -7,10 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.ProgressBar
-import android.widget.TextView
+import android.widget.*
 import androidx.core.content.ContextCompat
 import kotlin.concurrent.fixedRateTimer
 
@@ -77,6 +74,10 @@ class quizQuestionActivity : AppCompatActivity(), View.OnClickListener {
         //}
 
         //var currentPosition = 1 // starting with 1 so that it displays "1/10: is question number
+
+
+        defaultOptionsView()// to set the default question
+
         var question: Question =
             mQuestionList!![mCurrentPosition - 1] // to display the question from index 0
 
@@ -179,20 +180,35 @@ class quizQuestionActivity : AppCompatActivity(), View.OnClickListener {
                 if(mSelectedOptionPosition == 0){
                     mCurrentPosition++
 
-                    when{ //questions are left
+                    when{ //when questions are left
                         mCurrentPosition <= mQuestionList!!.size ->{
                             setQuestion()
                         }
+                        else ->{ // if no questions are left
+                            Toast.makeText(this,"You made it to the end", Toast.LENGTH_LONG).show()
+                        }
                     }
                 }
-                else{
+                else
+                {
                     // to get which question are at. The mCurrentPosition starts with 1 thats why -1 is used
                     val question = mQuestionList?.get(mCurrentPosition -1)
                     //if question is wrong , quesion!! because question is assigned to nullable
                     if(question!!.correctAnswer != mSelectedOptionPosition){
                         answerView(mSelectedOptionPosition, R.drawable.wrong_option_border_bg)
                     }
-                    answerView(mSelectedOptionPosition, R.drawable.correct_option_border_bg)
+                    answerView(question.correctAnswer, R.drawable.correct_option_border_bg)
+
+                    if(mCurrentPosition == mQuestionList!!.size){ //to see if completed all questions
+                        btnSubmit?.text = "FINISH"
+                    }
+                    else{
+                        btnSubmit?.text = "GO TO NEXT QUESTION"
+                    }
+
+                    mSelectedOptionPosition = 0
+
+
                 }
                 //to be implemented
             }
