@@ -69,6 +69,69 @@ object Constants {
             "Taiwan","Chile", 1) //adding the data as defined in the data class Questions
         questionsList.add(que10) //adding the 'que10' to the question list
 
+
+        var que11 = Question(11,"How many teeth does an adult human have? ",
+            R.drawable.ic_teeth, "30","32",
+            "34","28", 2) //adding the data as defined in the data class Questions
+        questionsList.add(que11) //adding the 'que10' to the question list
+
+
+        var que12 = Question(12,"What is the biggest state in America?",
+            R.drawable.ic_usa, "Alaska","Arizona",
+            "Arkansas","California", 1) //adding the data as defined in the data class Questions
+        questionsList.add(que12) //adding the 'que10' to the question list
+
+
+        var que13 = Question(13," Who wrote Snow White And The Seven Dwarfs? ",
+            R.drawable.ic_snowwhite, "William Shakespeare","George Orwell",
+            "Suzanne Weyn","John", 3) //adding the data as defined in the data class Questions
+        questionsList.add(que13) //adding the 'que10' to the question list
+
+
+        var que14 = Question(14,"In which sport would you use a shuttlecock? ",
+            R.drawable.ic_shuttlecocj, "Hockey","Tennis",
+            "Volleyball","Badminton", 4) //adding the data as defined in the data class Questions
+        questionsList.add(que14) //adding the 'que10' to the question list
+
+
+        var que15 = Question(15,"What is a group of lions called? ",
+            R.drawable.ic_lion, "Pride","Streak",
+            "Barrel","Coalitions", 1) //adding the data as defined in the data class Questions
+        questionsList.add(que15) //adding the 'que10' to the question list
+
+
+        var que16 = Question(16,"What planet is known as the red planet?",
+            R.drawable.ic_mars, "Mars","Pluto",
+            "Mercury","Jupiter", 1) //adding the data as defined in the data class Questions
+        questionsList.add(que16) //adding the 'que10' to the question list
+
+
+        var que17 = Question(17,"Which country is the origin of the cocktail Mojito?",
+            R.drawable.ic_mojito, "China","Europe",
+            "Cuba","Japan", 3) //adding the data as defined in the data class Questions
+        questionsList.add(que17) //adding the 'que10' to the question list
+
+
+        var que18 = Question(18,"Alberta is a province of which country?",
+            R.drawable.ic_alberta, "Canada","Australia",
+            "Europe","India", 1) //adding the data as defined in the data class Questions
+        questionsList.add(que18) //adding the 'que10' to the question list
+
+
+        var que19 = Question(19,"What is the longest river in the world?",
+            R.drawable.ic_river, "Amazon river","Nile",
+            "Mississippi River","Yangtze River", 2) //adding the data as defined in the data class Questions
+        questionsList.add(que19) //adding the 'que10' to the question list
+
+
+        var que20 = Question(20,"What colour is a giraffe's tongue?",
+            R.drawable.ic_giraffe, "Bluish black with pink base","Pink with bluish base",
+            "Yellow with red base","None of the above", 1) //adding the data as defined in the data class Questions
+        questionsList.add(que20) //adding the 'que10' to the question list
+
+
+
+
         return questionsList //as the functions wants to return
 
     }

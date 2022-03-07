@@ -25,6 +25,8 @@
             tools:text="What country does this flag belongs to ?"
             />
     <ImageView
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"
         android:id="@+id/iv_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -44,7 +46,7 @@
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:max="10"
+        android:max="20"
         android:indeterminate="false"
         android:minHeight="50dp"
         android:progress="0" /> <!--to display is correctly-->
@@ -56,7 +58,7 @@
             android:gravity="center"
             android:padding="15dp"
             android:textSize="14dp"
-            android:text="0/10"/>
+            android:text="0/20"/>
     </LinearLayout>
 
         <TextView
