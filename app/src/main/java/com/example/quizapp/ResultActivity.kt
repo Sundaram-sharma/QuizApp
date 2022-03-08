@@ -24,7 +24,9 @@ class ResultActivity : AppCompatActivity() {
 
         btnFinish.setOnClickListener{
 
-            startActivity(Intent(this, MainActivity::class.java)) // to back to the main activity
+            startActivity(Intent(this, MainActivity::class.java))// to back to the main activity
+            finish()
+
         }
     }
 }
